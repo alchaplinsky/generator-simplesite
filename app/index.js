@@ -22,7 +22,7 @@ SimpleGenerator.prototype.askFor = function askFor() {
 		message: 'What do you want to call your project?'
 	},{
 		name: 'blocks',
-		message: 'What blocks you will use in your project? (separated by spaces) \n For example: search button common menu'
+		message: 'What blocks you will use in your project? (separated by spaces) \n For example: search button common menu \n'
 	}];
 	this.prompt(prompts, function (props) {
 		this.websiteName = props.websiteName;
@@ -36,11 +36,11 @@ SimpleGenerator.prototype.app = function app() {
 	this.mkdir('css/blocks')
 	this.mkdir('img');
 	for (var i in this.blocks) {
-		this.write('css/blocks/' + this.blocks[i] + '.css', 'css/blocks/' + this.blocks[i] + '.css');
+		this.write('css/blocks/_' + this.blocks[i] + '.css', '/* Block: ' + this.blocks[i]);
 	}
 	this.write('index.html', 'index.html');
 	this.write('css/styles.css', 'css/styles.css');
-	this.write('app/scripts/main.js', this.mainJsFile);
+
 	this.copy('_package.json', 'package.json');
 	this.copy('_bower.json', 'bower.json');
 };
