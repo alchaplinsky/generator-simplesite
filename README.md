@@ -1,4 +1,4 @@
-# generator-simple [![Build Status](https://secure.travis-ci.org/drugoi/generator-simple.png?branch=master)](https://travis-ci.org/drugoi/generator-simple)
+# generator-simplesite [![Build Status](https://secure.travis-ci.org/drugoi/generator-simplesite.png?branch=master)](https://travis-ci.org/drugoi/generator-simplesite)
 
 A generator for [Yeoman](http://yeoman.io).
 
@@ -26,13 +26,13 @@ Yeoman travels light. He didn't pack any generators when he moved in. You can th
 To install generator-simple from npm, run:
 
 ```
-$ npm install -g generator-simple
+$ npm install -g generator-simplesite
 ```
 
 Finally, initiate the generator:
 
 ```
-$ yo simple
+$ yo simplesite
 ```
 
 ### Getting To Know Yeoman
