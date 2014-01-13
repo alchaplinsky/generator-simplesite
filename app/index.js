@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
@@ -16,7 +16,7 @@ SimpleGenerator.prototype.askFor = function askFor() {
 	var cb = this.async();
 
 	console.log(this.yeoman);
-	console.log("This is a simple generator for fast creating static websites");
+	console.log('This is a simple generator for fast creating static websites');
 	var prompts = [{
 		name: 'projectName',
 		message: 'What do you want to call your project?'
@@ -26,7 +26,7 @@ SimpleGenerator.prototype.askFor = function askFor() {
 	}];
 	this.prompt(prompts, function (props) {
 		this.projectName = props.projectName;
-		this.blocks = props.blocks.split(" ");
+		this.blocks = props.blocks.split(' ');
 		cb();
 	}.bind(this));
 };
@@ -43,13 +43,13 @@ SimpleGenerator.prototype.app = function app() {
 	
 	for (var i in this.blocks) {
 		this.write('css/blocks/_' + this.blocks[i] + '.css', '/* Block: ' + this.blocks[i] + '*/');
-		blocks.push('@import url(css/blocks/_'+ this.blocks[i] +'.css);\n');
+		blocks.push('@import url(css/blocks/_' + this.blocks[i] + '.css);\n');
 	}
-
-	var blocks = blocks.toString().replace(',', '');
 	
+	blocks = blocks.toString().replace(/,/g, '');
 	this.write('css/styles.css', blocks);
 	
+	this.template('_Gruntfile.js', 'Gruntfile.js');
 	this.template('_package.json', 'package.json');
 	this.template('_bower.json', 'bower.json');
 };

@@ -1,6 +1,6 @@
 {
 	"name": "generator-simplesite",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Simple generator for fast creating static websites",
 	"keywords": ["yeoman-generator", "web", "app", "front-end", "simplesite", "grunt", "fast"],
 	"homepage": "https://github.com/drugoi/generator-simplesite",
